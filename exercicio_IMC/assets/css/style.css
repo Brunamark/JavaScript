@@ -147,7 +147,10 @@ table {
     border: var(--headerBCVar) solid var(--headerBorderColor);
     font-family: system-ui;
     }
-    .paragraph-result {
-        background-color: #faa6a6;
+    .paragraph-result, .bad {
+        background-color: #49a300;
         text-align: center;
+    }
+    .bad{
+        background-color: #b30600;
     }

@@ -32,15 +32,36 @@ form.addEventListener('submit', function(e){ // e is equal to event
     const inputweight = e.target.querySelector('.weight');
     const inputheight = e.target.querySelector('.height');
 
-    const weight = Number(inputheight.value);
-    const height = Number(inputweight.value);
+    const weight = Number(inputweight.value);
+    const height = Number(inputheight.value);
 
     if(!weight){//if is NaN
         setResultado('Peso invalido', false);
         return;
     }
+    if(!height){
+        setResultado('Altura invalida', false);
+        return;
+    }
+    const imc = getImc(weight, height);
+    const imcLvl = getImcLevel(imc);
+    const msg = `Seu imc eh ${imc} (${imcLvl})`;
+    setResultado(msg, true);
     
 });
+function getImcLevel(imc){
+    const level = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau I', 'Obesidade grau II', 'Obesidade grau III'];
+
+    if(imc>=39.9) return level[5];
+    if(imc>=34.9) return level[4];
+    if(imc>=29.9) return level[3];
+    if(imc>=24.9) return level[2];
+    if(imc>=18.5) return level[1];
+    if(imc<18.5) return level[0];
+}
+function getImc(weight, height){
+    return (weight/height**2).toFixed(2);
+}
 function paragraph(){
     const p = document.createElement('p'); //create a paragraph
     p.classList.add('paragraph-result'); //add a class list in this paragraph
@@ -50,7 +71,13 @@ function setResultado (msg, isValid){
     const result = document.querySelector('#results');
     result.innerHTML = '';
     const p = paragraph();
-    p.innerHTML = `O seu IMC é ${msg.toFixed(2)}`;
-
+    if(isValid) {
+        p.classList.add('paragraph-result');
+    }
+    else{
+        p.classList.add('bad');
+    }
+    p.innerHTML = `${msg}`;
     result.appendChild(p);
+  
 }
