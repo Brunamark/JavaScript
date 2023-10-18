@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600&family=Oxanium:wght@300;400;700&display=swap');
+:root{
+    --primary-color:#535353;
+    --border-color:#ff5100;
+    --second-color-darker:#722501;
+    --tableWidth:  420px;
+    --headerFontSize:14px;
+    --headerFontColor: #fff;
+    --headerFontWeight: 0;
+    --headerFontBGColor: #fffbfb;
+    --headerTextAlign: center;
+    --bodyTextAlign: center;
+    --headerBorderColor:#dbdbdb;
+    --headerBCVar:0px;
+    --bodyFontSize:14px;
+    --evenRowsColor: #000000;
+    --oddRowsColor: #000000;
+    --evenRowsBGColor: #ffffff;
+    --oddRowsBGColor: #faa6a6;
+    --cellPaddingHVar: 15px;
+    --cellPaddingVVar: 15px;
+    --rowsBorderColor: #ffffff;
+    --rowsBorderWidth: 2px;
+    --text-color: hsl(0 0% 100%);
+}
+* {
+ box-sizing: border-box;
+ outline: 0;
+ margin: 0;
+ padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: 'Montserrat' , sans-serif;
+    font-size: 1.0em;
+    line-height: 1.5em;
+
+}
+.container{
+    max-width: 640px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background:#fff ;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+}
+.text{
+   text-align: center; 
+  
+}
+form input, form label, form button {
+   display: block;
+   width: 100%;
+   margin-bottom: 10px;
+}
+form input{
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--border-color);
+}
+form button{
+    border: none;
+    background-color: #b1410d;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+
+}
+form button:hover{
+    background: var(--second-color-darker);
+}
+form button:active{
+    background: #1a0100;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    background: #fff;
+    width: var(--tableWidth);
+
+    }
+    
+    td {
+    font-size: var(--bodyFontSize);
+    }
+    
+    tbody tr {
+    border-bottom: 1px solid #dddddd;
+    min-height: 100px;
+    text-align: var(--bodyTextAlign);
+    border: none;
+    }
+    
+    th,
+    td,
+    caption {
+    padding-left: var(--cellPaddingHVar); 
+    padding-right: var(--cellPaddingHVar);
+    padding-top: var(--cellPaddingVVar);
+    padding-bottom: var(--cellPaddingVVar);
+    }
+
+
+    
+    caption {
+    text-align: left;
+    background-color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffffcc;
+    font-family: system-ui;
+    }
+    
+    tbody tr:nth-child(even) {
+    color: var(--evenRowsColor);
+    background-color: var(--evenRowsBGColor);
+    }
+    
+    tbody tr:nth-child(odd) {
+    color: var(--oddRowsColor);
+    background-color: var(--oddRowsBGColor);
+    }
+    
+    thead {
+    text-align: var(--headerTextAlign);
+    text-transform: uppercase;
+    font-size: var(--headerFontSize);
+    font-weight: var(--headerFontWeight);
+    letter-spacing: .002em;
+    color: var(--headerFontColor) !important;
+    background-color: var(--headerFontBGColor);
+    border: var(--headerBCVar) solid var(--headerBorderColor);
+    font-family: system-ui;
+    }
+    .paragraph-result {
+        background-color: #faa6a6;
+        text-align: center;
+    }
