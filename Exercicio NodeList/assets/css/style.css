@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;600&family=Oxanium:wght@300;400;700&display=swap');
+:root{
+    --primary-color:#535353;
+    --border-color:#ff5100;
+    --second-color-darker:#722501;
+}
+* {
+ box-sizing: border-box;
+ outline: 0;
+ margin: 0;
+ padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);
+    font-family: 'Montserrat' , sans-serif;
+    font-size: 1.0em;
+    line-height: 1.5em;
+
+}
+.container{
+    max-width: 640px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background:#fff ;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+}
+form input, form label, form button {
+   display: block;
+   width: 100%;
+   margin-bottom: 10px;
+}
+form input{
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--border-color);
+}
+form button{
+    border: none;
+    background-color: #b1410d;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+
+}
+form button:hover{
+    background: var(--second-color-darker);
+}
+form button:active{
+    background: #1a0100;
+}
